@@ -1,0 +1,21 @@
+// Copia este archivo como config.h y edita tus valores.
+// config.h esta en .gitignore: nunca subas credenciales al repositorio.
+#pragma once
+
+#define WIFI_SSID        "MiHotspot"
+#define WIFI_PASSWORD    "mi-password"
+
+// IP de la laptop donde corre docker compose (NO uses "localhost").
+// En Windows: ipconfig  |  En Linux/Mac: ip addr / ifconfig
+#define MQTT_HOST        "192.168.1.100"
+#define MQTT_PORT        1883
+#define MQTT_USER        ""
+#define MQTT_PASSWORD    ""
+#define MQTT_BASE_TOPIC  "smartclassroom"
+
+// Deben coincidir con lo que cargo el seed del backend
+#define SEDE_SLUG        "lima-norte"
+#define AULA_CODIGO      "302"
+#define DEVICE_ID        "esp32-302"
+
+#define FIRMWARE_VERSION "1.0.0"

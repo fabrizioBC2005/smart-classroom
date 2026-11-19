@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+
+body {
+  @apply bg-page text-ink antialiased;
+  font-feature-settings: "cv11", "ss01";
+}
+
+/* Tarjeta base: borde fino + sombra en dos capas (contacto + ambiente),
+   mas suave que shadow-card y sin el gris plano de antes. */
+.card {
+  @apply rounded-xl border border-line bg-white shadow-card;
+}
+
+.pill {
+  @apply inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold;
+}
+
+/* etiqueta de seccion: 10-11px, mayusculas, tracking amplio */
+.eyebrow {
+  @apply text-[11px] font-semibold uppercase tracking-[0.12em] text-muted;
+}
+
+/* latido para el punto de "en vivo" */
+@keyframes latido { 0%,100% { opacity: 1 } 50% { opacity: .35 } }
+.latido { animation: latido 1.8s ease-in-out infinite; }
+
+/* destello: marca brevemente que un valor acaba de llegar por WebSocket */
+@keyframes destello { 0% { background-color: rgba(2, 128, 144, .16); } 100% { background-color: transparent; } }
+.destello { animation: destello 1s ease-out; }
+
+/* entra: fade-in sutil para filas nuevas del timeline */
+@keyframes entra { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+.entra { animation: entra .35s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .latido, .destello, .entra { animation: none; }
+}

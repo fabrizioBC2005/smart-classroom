@@ -1,0 +1,22 @@
+# entorno
+.env
+firmware/config.h
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# node
+node_modules/
+.next/
+out/
+web/.env.local
+
+# sistema
+.DS_Store
+*.log
+
+# local
+*.tsbuildinfo
